@@ -39,10 +39,11 @@ function onFormSubmit(event) {
     event.target.elements.message.value === ''
   ) {
     alert('Fill please all fields');
+  } else {
+    console.log(formData);
+    formData.email = '';
+    formData.message = '';
+    localStorage.removeItem('feedback-form-state');
+    event.target.reset();
   }
-  console.log(formData);
-  formData.email = '';
-  formData.message = '';
-  localStorage.removeItem('feedback-form-state');
-  event.target.reset();
 }
